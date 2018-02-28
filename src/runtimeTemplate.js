@@ -4,9 +4,12 @@
 export default {
   register(options = {}) {
     if (navigator.serviceWorker) {
-      return navigator.serviceWorker.register(serviceWorkerOption.scriptURL, options)
+      return navigator.serviceWorker.register(
+        serviceWorkerOption.scriptURL,
+        options
+      );
     }
 
-    return false
-  },
-}
+    return false;
+  }
+};

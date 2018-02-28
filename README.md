@@ -1,23 +1,27 @@
 # serviceworker-webpack-plugin
 
-> Simplifies creation of a service worker to serve your webpack bundles.
+I forked this from
+Olivier Tassinari <olivier.tassinari@gmail.com> (https://github.com/oliviertassinari), as the
+development seemed stalled and I needed this. So most of all credits go to him! :)
 
-[![npm version](https://img.shields.io/npm/v/serviceworker-webpack-plugin.svg?style=flat-square)](https://www.npmjs.com/package/serviceworker-webpack-plugin)
-[![npm downloads](https://img.shields.io/npm/dm/serviceworker-webpack-plugin.svg?style=flat-square)](https://www.npmjs.com/package/serviceworker-webpack-plugin)
-[![Build Status](https://travis-ci.org/oliviertassinari/serviceworker-webpack-plugin.svg?branch=master)](https://travis-ci.org/oliviertassinari/serviceworker-webpack-plugin)
+Simplifies creation of a service worker to serve your webpack bundles.
 
-[![Dependencies](https://img.shields.io/david/oliviertassinari/serviceworker-webpack-plugin.svg?style=flat-square)](https://david-dm.org/oliviertassinari/serviceworker-webpack-plugin)
-[![DevDependencies](https://img.shields.io/david/dev/oliviertassinari/serviceworker-webpack-plugin.svg?style=flat-square)](https://david-dm.org/oliviertassinari/serviceworker-webpack-plugin#info=devDependencies&view=list)
+[![npm version](https://img.shields.io/npm/v/@dr-kobros/serviceworker-webpack-plugin.svg?style=flat-square)](https://www.npmjs.com/package/serviceworker-webpack-plugin)
+[![npm downloads](https://img.shields.io/npm/dm/@dr-kobros/serviceworker-webpack-plugin.svg?style=flat-square)](https://www.npmjs.com/package/serviceworker-webpack-plugin)
+[![Build Status](https://travis-ci.org/pekkis/serviceworker-webpack-plugin.svg?branch=master)](https://travis-ci.org/pekkis/serviceworker-webpack-plugin)
+
+[![Dependencies](https://img.shields.io/david/pekkis/serviceworker-webpack-plugin.svg?style=flat-square)](https://david-dm.org/pekkis/serviceworker-webpack-plugin)
+[![DevDependencies](https://img.shields.io/david/dev/pekkis/serviceworker-webpack-plugin.svg?style=flat-square)](https://david-dm.org/pekkis/serviceworker-webpack-plugin#info=devDependencies&view=list)
 
 ## Installation
 
 ```sh
-npm install serviceworker-webpack-plugin
+yarn install @dr-kobros/serviceworker-webpack-plugin
 ```
 
 ## The problem solved
 
-When building a service worker, you probably want to [cache all](https://github.com/oliviertassinari/serviceworker-webpack-plugin/blob/master/docs/src/sw.js#L38)
+When building a service worker, you probably want to cache
 your assets during the `install` phase.
 But in order to do so, you need their **names**.
 That's not simple when you are using *Webpack*:
@@ -31,7 +35,7 @@ That's not simple when you are using *Webpack*:
 ### 1. Add the plugin to your webpack config
 
 ```js
-import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin';
+import ServiceWorkerWebpackPlugin from '@dr-kobros/serviceworker-webpack-plugin';
 
 ...
 
@@ -46,7 +50,7 @@ import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin';
 ### 2. Register the service worker in your main JS thread
 
 ```js
-import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+import runtime from '@dr-kobros/serviceworker-webpack-plugin/lib/runtime';
 
 if ('serviceWorker' in navigator) {
   const registration = runtime.register();
@@ -65,10 +69,6 @@ E.g. In our example this object looks like:
 }
 ```
 
-## Simple example
-
-You can have a look at the [`/docs`](https://github.com/oliviertassinari/serviceworker-webpack-plugin/tree/master/docs)
-folder if you need a full working example.
 
 ## API
 

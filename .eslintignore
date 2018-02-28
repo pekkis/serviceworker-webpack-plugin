@@ -1,4 +1,6 @@
 node_modules
 /lib
 /docs/dist
+/docs/
+*.spec.js
 /flow/interfaces
